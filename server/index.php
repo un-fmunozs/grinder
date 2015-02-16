@@ -280,11 +280,11 @@
 	</head>
 	<body>
 
-		<center>
+		<!-- center>
 			<div id='logo'>
 				<img src='images/logo.png' alt='Grinder' title='...and the machine grinds on!'/>
 			</div>
-		</center>
+		</center -->
 
 		<div id="tabs">
 		
