@@ -38,8 +38,8 @@
 			node varchar(32) NOT NULL,
 			target varchar(32) NOT NULL,
 			hash varchar(32) NOT NULL,
-			hash_quick varchar(8) NOT NULL,
-			hash_full varchar(8) NOT NULL,
+			hash_quick varchar(32) NOT NULL,
+			hash_full varchar(32) NOT NULL,
 			type varchar(128) NOT NULL,
 			fuzzer varchar(128) NOT NULL,
 			verified int(11) NOT NULL DEFAULT 0,
@@ -175,7 +175,7 @@
 			if( !defined( 'NO_SESSION' ) )
 			{
 				session_name( 'grinder' );
-				session_set_cookie_params( 60 * 60 * 24 * 7, '" . $grinder_path . "', '" . $grinder_domain . "' );
+				session_set_cookie_params( 60 * 60 * 24 * 7);
 				session_start();
 			}
 			

@@ -304,7 +304,7 @@
 						if( isset($_POST['verified']) )
 							$verified = intval( mysql_real_escape_string( trim( $_POST['verified'] ) ) ); // v0.2 addition
 						
-						if( empty( $time ) or empty( $node ) or empty( $target ) or empty( $hash_quick ) or empty( $hash_full ) or empty( $type ) or empty( $fuzzer ) or strlen( $hash_quick ) != 8 or strlen( $hash_full ) != 8 )
+						if( empty( $time ) or empty( $node ) or empty( $target ) or empty( $hash_quick ) or empty( $hash_full ) or empty( $type ) or empty( $fuzzer )) // or strlen( $hash_quick ) != 8 or strlen( $hash_full ) != 8 )
 							exit;
 						
 						$log_data   = trim( $_POST['log_data'] );
