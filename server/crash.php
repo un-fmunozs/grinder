@@ -74,7 +74,7 @@
 			{
 				$row  = mysql_fetch_array( $result );
 
-				$data = zlib_decode(base64_decode( $row['crash_data'] ));
+				$data = gzuncompress(base64_decode( $row['crash_data'] ));
 			}
 			mysql_free_result( $result );
 		}
@@ -93,7 +93,7 @@
 			{
 				$row  = mysql_fetch_array( $result );
 
-				$data = zlib_decode(base64_decode( $row['log_data'] ));
+				$data = gzuncompress(base64_decode( $row['log_data'] ));
 			}
 			mysql_free_result( $result );
 		}
