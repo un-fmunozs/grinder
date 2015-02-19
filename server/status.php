@@ -271,7 +271,7 @@
 				case 'update_node_fuzz_status':
 					if( isset($_POST['time']) && isset($_POST['node']) && isset($_POST['tcpm']) )
 					{
-						$time                 = mysql_real_escape_string( trim( $_POST['time'] ) );
+						$time                 = date('Y-m-d H:i:s'); 
 						$node                 = mysql_real_escape_string( trim( $_POST['node'] ) );
 						$testcases_per_minute = intval( mysql_real_escape_string( trim( $_POST['tcpm'] ) ) );
 						

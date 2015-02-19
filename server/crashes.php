@@ -379,9 +379,6 @@
 						<td title='The effected target application.'>
 							<a href='javascript:_sort(2);'><?php echo ( ( $order_index == 2 ) ? "TARGET " . ( ( $order_by == 1 ) ? "&uarr; " : "&darr;" ) : "TARGET" ); ?></a>
 						</td>
-						<td title='The Grinder fuzzer which generated this crash.'>
-							<a href='javascript:_sort(3);'><?php echo ( ( $order_index == 3 ) ? "FUZZER " . ( ( $order_by == 1 ) ? "&uarr; " : "&darr;" ) : "FUZZER" ); ?></a>
-						</td>
 						<td title='The type of crash.'>
 							<a href='javascript:_sort(4);'><?php echo ( ( $order_index == 4 ) ? "TYPE " . ( ( $order_by == 1 ) ? "&uarr; " : "&darr;" ) : "TYPE" ); ?></a>
 						</td>
@@ -501,7 +498,6 @@
 									
 									echo "<td>" . htmlentities( $row['node'], ENT_QUOTES ) . "</td>";
 									echo "<td>" . htmlentities( $row['target'], ENT_QUOTES ) . "</td>";
-									echo "<td>" . htmlentities( $row['fuzzer'], ENT_QUOTES ) . "</td>";
 									echo "<td>" . htmlentities( $row['type'], ENT_QUOTES ) . "</td>";
 									// small bug here whereby we dont place a * when their are two or more different major crashes (withmatching minor)
 									// but one of the unique crashes has more then one instance (logik fail: intval( $row['count'] ) == 1 )
