@@ -342,7 +342,7 @@
 							$display_owner = true;
 					}
 					
-					$order_by = 1;
+					$order_by = 0;
 					if( isset( $_POST['order'] ) )
 					{
 						$order = intval( mysql_real_escape_string( $_POST['order'] ) );
@@ -353,7 +353,7 @@
 					}
 					
 					$orders = array( 'verified', 'node', 'target', 'fuzzer', 'type', 'hash_quick', 'time', 'count' );
-					$order_index = 6;
+					$order_index = 4;
 					if( isset( $_POST['sort'] ) )
 					{
 						$sort = intval( mysql_real_escape_string( $_POST['sort'] ) );
