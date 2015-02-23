@@ -257,7 +257,7 @@
 					{
 						$hash = mysql_real_escape_string( trim( $_POST['hash'] ) );
 
-						if( empty( $hash ) or strlen( $hash ) != 17 )
+						if( empty( $hash )) // or strlen( $hash ) != 17 )
 							exit;
 							
 						$success = duplicate_crash( $hash );
