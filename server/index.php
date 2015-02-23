@@ -87,8 +87,8 @@
 		<script type="text/javascript">
 			var owner          =  0;
 			var unique         =  1;
-			var order          =  1;
-			var sort           =  6;
+			var order          =  0;
+			var sort           =  4;
 			var offset         =  0;
 			var crash_id       =  0;
 			var crash_notes    = '';
