@@ -103,7 +103,8 @@
 	function duplicate_crash( $hash )
 	{
 		$duplicate = false;
-		$sql       = "SELECT SUM(count) FROM crashes WHERE hash='" . $hash . "' LIMIT 1;";
+		$hash_quick = explode(".", $hash);
+		$sql       = "SELECT SUM(count) FROM crashes WHERE hash_quick='" . $hash_quick[0] . "' LIMIT 1;";
 		$result    = mysql_query( $sql );
 		if( $result )
 		{	
