@@ -395,7 +395,7 @@
 					
 					<?php
 						$total = 0;
-						$limit = 25;
+						$limit = 40;
 						$where_count = 0;
 						
 						$sql = "";
@@ -472,7 +472,6 @@
 							{
 								while( $row = mysql_fetch_array( $result ) )
 								{
-								
 									echo "<tr class='crash' onclick='javascript:_crash_click(\"" . htmlentities( $row['id'], ENT_QUOTES ) . "\", \"" . htmlentities( $row['hash_quick'], ENT_QUOTES ) . "." . htmlentities( $row['hash_full'], ENT_QUOTES ) . "\");'>";
 
 									echo "<td ";
@@ -501,10 +500,11 @@
 									echo "<td>" . htmlentities( $row['type'], ENT_QUOTES ) . "</td>";
 									// small bug here whereby we dont place a * when their are two or more different major crashes (withmatching minor)
 									// but one of the unique crashes has more then one instance (logik fail: intval( $row['count'] ) == 1 )
+                                    $link = "crash.php?action=get_crash_data&id={$row['id']}&filename={$row['hash_quick']}.{$row['hash_full']}.crash";
 									if( isset( $row['total'] ) and intval( $row['total'] ) > 1 and intval( $row['count'] ) == 1 )
-										echo "<td>" . htmlentities( $row['hash_quick'], ENT_QUOTES ) . ".*</td>";
+										echo "<td><a href='$link'>" . htmlentities( $row['hash_quick'], ENT_QUOTES ) . ".*</a></td>";
 									else
-										echo "<td>" . htmlentities( $row['hash_quick'], ENT_QUOTES ) . "." . htmlentities( $row['hash_full'], ENT_QUOTES ) . "</td>";
+										echo "<td><a href='$link'>" . htmlentities( $row['hash_quick'], ENT_QUOTES ) . "." . htmlentities( $row['hash_full'], ENT_QUOTES ) . "</a></td>";
 									echo "<td>" . htmlentities( $row['time'], ENT_QUOTES ) . "</td>";
 									if( isset( $row['total'] ) )
 										echo "<td>" . htmlentities( $row['total'], ENT_QUOTES ) . "</td>";
